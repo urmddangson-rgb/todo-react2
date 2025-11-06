@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: todo-react2
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: NODE_ENV
+        value: production
+
