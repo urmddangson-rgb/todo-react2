@@ -1,10 +1,14 @@
 services:
+  # 프론트엔드 (정적 사이트)
   - type: web
-    name: todo-react2
+    name: todo-react2-frontend
     env: static
-    buildCommand: npm install && npm run build
+    buildCommand: npm ci && npm run build
     staticPublishPath: ./dist
+    nodeVersion: 20.x
     envVars:
       - key: NODE_ENV
         value: production
+      - key: VITE_API_BASE_URL
+        sync: false  # Render 대시보드에서 백엔드 URL로 설정 필요 (예: https://todo-react2-backend.onrender.com/api/todos)
 

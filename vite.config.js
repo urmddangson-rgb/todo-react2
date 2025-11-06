@@ -7,12 +7,16 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    emptyOutDir: true
+    emptyOutDir: true,
+    sourcemap: false
   },
   server: {
     host: true,
     port: 5173,
     strictPort: false,
     open: true
+  },
+  define: {
+    'process.env': {}
   }
 })
